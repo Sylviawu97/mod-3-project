@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField } from '@mui/material';
 import './ApplicationForm.css';
-
+import axios from 'axios';
 const ApplicationForm = ({ open, setOpen }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');       
@@ -55,7 +55,21 @@ const ApplicationForm = ({ open, setOpen }) => {
         event.preventDefault();
 
         // Perform any necessary actions with the form data (e.g., submit to a server)
+          axios({
+             method: "post",
+             url:"/create-application",
+             data:{
+                firstName,
+                lastName,
+                highSchool,
+                age,
+                gpa,
+                nationality,
+                resume,
+                transcript
+             }
 
+          })
         // Reset the form fields
         setFirstName('');
         setLastName('');
@@ -71,104 +85,104 @@ const ApplicationForm = ({ open, setOpen }) => {
     };
     console.log(open);
     return (
-       
         <div>
             
-            <Dialog open={open} onClose={handleClose}>
-                 <DialogContent>
-                    <form onSubmit={handleSubmit} className="form-container">
-                        <TextField
-                            label="First Name"
-                            value={firstName}
-                            onChange={handleFirstNameChange}
-                            required
-                            className="form-field"
+        <Dialog open={open} onClose={handleClose}>
+             <DialogContent>
+                <form onSubmit={handleSubmit} className="form-container">
+                    <TextField
+                        label="First Name"
+                        value={firstName}
+                        onChange={handleFirstNameChange}
+                        required
+                        className="form-field"
+                    />
+                   
+                    <TextField
+                        label="Last Name"
+                        value={lastName}
+                        onChange={handleLastNameChange}
+                        required
+                        className="form-field"
+                    />
+                   
+                    <TextField
+                        label="High School"
+                        value={highSchool}
+                        onChange={handleHighSchoolChange}
+                        required
+                        className="form-field"
+                    />
+                    <TextField
+                        label="Age"
+                        type="number"
+                        value={age}
+                        onChange={handleAgeChange}
+                        inputProps={{ inputMode: 'numeric' }}
+                        required
+                        className="form-field"
+                    />
+                    <TextField
+                        label="GPA"
+                        type="number"
+                        step={0.1}
+                        value={gpa}
+                        onChange={handleGpaChange}
+                        required
+                        className="form-field"
+                    />
+                    <TextField
+                        label="Nationality"
+                        value={nationality}
+                        onChange={handleNationalityChange}
+                        required
+                        className="form```jsx
+          form-field"
+                    />
+                    <div className="choose-file-section">
+                        <label htmlFor="resume-input" className="choose-file-label">
+                            Upload Resume:
+                        </label>
+                        <input
+                            type="file"
+                            accept=".pdf,.doc,.docx"
+                            id="resume-input"
+                            onChange={handleResumeChange}
+                            style={{ display: 'none' }}
                         />
-                        <TextField
-                            label="Last Name"
-                            value={lastName}
-                            onChange={handleLastNameChange}
-                            required
-                            className="form-field"
+                        <input
+                            type="text"
+                            value={resume ? resume.name : ''}
+                            disabled
+                            style={{ marginLeft: '1rem', background: 'none', border: 'none' }}
                         />
-                        <TextField
-                            label="High School"
-                            value={highSchool}
-                            onChange={handleHighSchoolChange}
-                            required
-                            className="form-field"
-                        />
-                        <TextField
-                            label="Age"
-                            type="number"
-                            value={age}
-                            onChange={handleAgeChange}
-                            inputProps={{ inputMode: 'numeric' }}
-                            required
-                            className="form-field"
-                        />
-                        <TextField
-                            label="GPA"
-                            type="number"
-                            step={0.1}
-                            value={gpa}
-                            onChange={handleGpaChange}
-                            required
-                            className="form-field"
-                        />
-                        <TextField
-                            label="Nationality"
-                            value={nationality}
-                            onChange={handleNationalityChange}
-                            required
-                            className="form```jsx
-              form-field"
-                        />
-                        <div className="choose-file-section">
-                            <label htmlFor="resume-input" className="choose-file-label">
-                                Upload Resume:
-                            </label>
-                            <input
-                                type="file"
-                                accept=".pdf,.doc,.docx"
-                                id="resume-input"
-                                onChange={handleResumeChange}
-                                style={{ display: 'none' }}
-                            />
-                            <input
-                                type="text"
-                                value={resume ? resume.name : ''}
-                                disabled
-                                style={{ marginLeft: '1rem', background: 'none', border: 'none' }}
-                            />
-                            <label htmlFor="resume-input">
-                                <Button component="span">Choose File</Button>
-                            </label>
-                        </div>
+                        <label htmlFor="resume-input">
+                            <Button component="span">Choose File</Button>
+                        </label>
+                    </div>
 
-                        <div className="choose-file-section">
-                            <label htmlFor="transcript-input" className="choose-file-label">
-                                Upload Transcript:
-                            </label>
-                            <input
-                                type="file"
-                                accept=".pdf,.doc,.docx"
-                                id="transcript-input"
-                                onChange={handleTranscriptChange}
-                                style={{ display: 'none' }}
-                            />
-                            <input
-                                type="text"
-                                value={transcript ? transcript.name : ''}
-                                disabled
-                                style={{ marginLeft: '1rem', background: 'none', border: 'none' }}
-                            />
-                            <label htmlFor="transcript-input">
-                                <Button component="span">Choose File</Button>
-                            </label>
-                        </div>
-
-
+                    <div className="choose-file-section">
+                        <label htmlFor="transcript-input" className="choose-file-label">
+                            Upload Transcript:
+                        </label>
+                        <input
+                            type="file"
+                            accept=".pdf,.doc,.docx"
+                            id="transcript-input"
+                            onChange={handleTranscriptChange}
+                            style={{ display: 'none' }}
+                        />
+                        <input
+                            type="text"
+                            value={transcript ? transcript.name : ''}
+                            disabled
+                            style={{ marginLeft: '1rem', background: 'none', border: 'none' }}
+                        />
+                        <label htmlFor="transcript-input">
+                            <Button component="span">Choose File</Button>
+                        </label>
+                    </div>
+      
 
                         <DialogActions>
                             <Button onClick={handleClose}>Cancel</Button>

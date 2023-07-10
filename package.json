@@ -2,6 +2,7 @@
   "name": "navigation-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4001",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -10,7 +11,10 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "material": "^0.5.3",
+    "mongoose": "^7.3.2",
     "mui": "^0.0.1",
     "package": "^1.0.1",
     "react": "^17.0.2",
@@ -23,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm start\"  \"nodemon server.js\"  "
   },
   "eslintConfig": {
     "extends": [

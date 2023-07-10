@@ -62,15 +62,16 @@ const Navbarmenu = ({setOpen}) => {
 
 
                     <ul className={boxClass.join(' ')}>
-                    <li  className="menu-item" >
-                        <NavLink exact activeClassName='is-active' onClick={toggleClass} to={`/`}> About </NavLink> 
-                    </li>
-                    <li className="menu-item " ><NavLink onClick={handleClick} activeClassName='is-active' to={`/ApplicationForm`}> ApplicationForm </NavLink> </li>
+                   
+                    <li className="menu-item " ><NavLink onClick={handleClick} activeClassName='is-active' to={`/ApplicationForm`}> Application Form </NavLink> </li>
                     <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Service <FiChevronDown /> </Link>
                         <ul className={boxClassSubMenu.join(' ')} > 
                             <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/SummerCamp`}> Summer Camp </NavLink> </li>
                             <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/CareerAdvice`}> Career Advice </NavLink> </li>
                         </ul>
+                    </li>
+                    <li  className="menu-item" >
+                        <NavLink exact activeClassName='is-active' onClick={toggleClass} to={`/`}> About </NavLink> 
                     </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Contact`}> Contact </NavLink> </li>
 

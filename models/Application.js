@@ -8,8 +8,8 @@ const appSchema = new mongoose.Schema(
         age: {type: Number, required: true, min: 16},
         gpa:{type:Number, required:true, min:2.0},
         nationality:{type:String, required:true},
-        resume:{type:Buffer , required:true},
-        transcript:{type:Buffer, required:true},
+        resume:{type:Buffer},
+        transcript:{type:Buffer },
     
     },
     {timestamps: true}

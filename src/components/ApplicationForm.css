@@ -1,0 +1,33 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+}
+
+.upload-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.upload-section label {
+    margin-right: 1rem;
+}
+
+.upload-section input[type="text"] {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+}
+
+.choose-file-section {
+    display: flex;
+    align-items: center;
+}
+
+.choose-file-section .choose-file-label {
+    margin-right: 1rem;
+}

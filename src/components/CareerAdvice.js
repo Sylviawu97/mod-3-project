@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Offline = () => {
+const CareerAdvice = () => {
     return (
         <div className="sec__one">
-            <h1> Offline Shop </h1>
+            <h1> Career Advice </h1>
         </div>
     )
 }
 
-export default Offline
+export default CareerAdvice

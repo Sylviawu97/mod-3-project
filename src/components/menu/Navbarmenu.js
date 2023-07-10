@@ -4,10 +4,15 @@ import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import logo from '../../img/logo.png';
 
 
-const Navbarmenu = () => {
+const Navbarmenu = ({setOpen}) => {
 
     const [isMenu, setisMenu] = useState(false);
     const [isResponsiveclose, setResponsiveclose] = useState(false);
+
+    const handleClick = () => {
+        setOpen(true);
+    };
+
     const toggleClass = () => {
       setisMenu(isMenu === false ? true : false);
       setResponsiveclose(isResponsiveclose === false ? true : false);
@@ -32,9 +37,7 @@ const Navbarmenu = () => {
     }else {
         boxClassSubMenu.push('');
     }
-
    
-
     return (
     <header className="header__middle">
         <div className="container">
@@ -60,13 +63,13 @@ const Navbarmenu = () => {
 
                     <ul className={boxClass.join(' ')}>
                     <li  className="menu-item" >
-                        <NavLink exact activeClassName='is-active' onClick={toggleClass} to={`/`}> Home </NavLink> 
+                        <NavLink exact activeClassName='is-active' onClick={toggleClass} to={`/`}> About </NavLink> 
                     </li>
-                    <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/About`}> About </NavLink> </li>
-                    <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Shop <FiChevronDown /> </Link>
+                    <li className="menu-item " ><NavLink onClick={handleClick} activeClassName='is-active' to={`/ApplicationForm`}> ApplicationForm </NavLink> </li>
+                    <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Service <FiChevronDown /> </Link>
                         <ul className={boxClassSubMenu.join(' ')} > 
-                            <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/Online`}> Online Shop </NavLink> </li>
-                            <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Offline`}> Offline Shop </NavLink> </li>
+                            <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/SummerCamp`}> Summer Camp </NavLink> </li>
+                            <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/CareerAdvice`}> Career Advice </NavLink> </li>
                         </ul>
                     </li>
                     <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Contact`}> Contact </NavLink> </li>

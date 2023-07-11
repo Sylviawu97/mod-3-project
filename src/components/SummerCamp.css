@@ -1,4 +1,5 @@
 .card-title {
+    margin-left:150px;
     color: #01bf71;
     font-size: 24px;
   }
@@ -6,16 +7,20 @@
     padding: 0.2rem 1rem;
   }
   .card-text {
+    
     padding: 0rem 0rem 1rem 0rem;
     font-weight: 500;
     font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
   
   }
   
   .card {
+    margin-left:300px;
     cursor: pointer;
     border-radius: 10px;
-    width: 100%;
+    width: 1000px;
     transition: all 0.2s;
     background-color: white;
     box-shadow: 5px 5px 5px 5px #e5e5e5;
@@ -25,10 +30,15 @@
   }
   
   .sec__one .col-md-4 {
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;}
+
+ .card img {
+    margin-left:320px;
+        width: 350px;
+        height: auto;
+      }
   
-  
-  }
+ 
   ul li a {
     cursor: pointer;
   }

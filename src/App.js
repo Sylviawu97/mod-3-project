@@ -10,10 +10,12 @@ import SummerCamp from './components/SummerCamp';
 import CareerAdvice from './components/CareerAdvice';
 
 
+
 function App() {
   const [open, setOpen] = useState(false);
   return (
     <div>
+
       <Router basename="/">
 
         {/* Add Menu Component */}
@@ -29,7 +31,7 @@ function App() {
           
         </Switch>
       </Router>
-
+  
     </div>
   );
 }

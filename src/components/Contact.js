@@ -1,10 +1,15 @@
 import React from 'react'
+import "./Contact.css";
 
 const Contact = () => {
        return (
               <div className="sec__one">
-                     <h1> Contact </h1>
-              </div>
+              <img className="Gif" src="https://househuntindia.com/wp-content/uploads/2021/07/contact.gif" alt=""/>
+              <div>
+                     
+                     </div>      
+</div>
+             
        )
 }
 

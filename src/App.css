@@ -20,6 +20,10 @@ img {
   height: auto;
 }
 
+.home1  {
+   width:100vw;
+   display: grid;
+}
 .sec__one {
     position: relative;
     width: 100%;
